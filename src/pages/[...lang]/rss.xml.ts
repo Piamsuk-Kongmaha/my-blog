@@ -23,7 +23,7 @@ export async function GET(context: any) {
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
   return rss({
-    title: `Zahit | ${t('home.title')}`,
+    title: `${SITE_CONFIG.title} | ${t('home.title')}`,
     description: t('home.subtitle') || SITE_CONFIG.description,
     site: context.site || SITE_CONFIG.url,
     items: posts.map((post) => {

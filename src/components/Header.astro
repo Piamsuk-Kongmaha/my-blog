@@ -1,27 +1,11 @@
 ---
-import { getLangFromUrl, useTranslations, getRouteFromUrl } from '../i18n/utils';
-import { languages } from '../i18n/ui';
-import { getCollection } from 'astro:content';
-import type { CollectionEntry } from 'astro:content';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import { SITE_CONFIG } from '../config';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const route = getRouteFromUrl(Astro.url);
 
-// Fetch all posts to handle translation mapping
-const allPosts: CollectionEntry<'blog'>[] = await getCollection('blog');
-const isPost = route?.startsWith('blog/');
-let currentTranslationKey: string | undefined = undefined;
-
-if (isPost && route) {
-	const currentSlug = route.replace('blog/', '').replace(/\/$/, '');
-	const currentPost = allPosts.find(p => p.id === `${lang}/${currentSlug}`);
-	if (currentPost) {
-		currentTranslationKey = currentPost.data.translationKey;
-	}
-}
 ---
 <header class="site-header">
 	<nav>
@@ -33,35 +17,6 @@ if (isPost && route) {
 			<a href={getRelativeLocaleUrl(lang, 'archive')}>{t('nav.archive')}</a>
 			<a href={getRelativeLocaleUrl(lang, 'tags')}>{t('nav.tags')}</a>
 			<a href={getRelativeLocaleUrl(lang, 'about')}>{t('nav.about')}</a>
-		</div>
-		<div class="lang-switcher">
-			<ul>
-				{Object.entries(languages).map(([abbr, label]) => {
-					let targetRoute = route || '';
-					
-					if (targetRoute.startsWith('blog/') && lang !== abbr) {
-						let matchedPost;
-						if (currentTranslationKey) {
-							matchedPost = allPosts.find(p => p.id.startsWith(`${abbr}/`) && p.data.translationKey === currentTranslationKey);
-						}
-						
-						if (matchedPost) {
-							const targetSlug = matchedPost.id.replace(`${abbr}/`, '');
-							targetRoute = `blog/${targetSlug}/`;
-						} else {
-							targetRoute = 'archive/';
-						}
-					}
-					
-					return (
-					<li>
-						<a href={getRelativeLocaleUrl(abbr, targetRoute)} class={lang === abbr ? 'active' : ''}>
-							{abbr.toUpperCase()}
-						</a>
-					</li>
-					);
-				})}
-			</ul>
 		</div>
 	</nav>
 </header>
@@ -86,7 +41,7 @@ if (isPost && route) {
 	.logo a {
 		font-size: 1.5rem;
 		font-weight: 700;
-		color: #ffffff;
+		color: var(--heading-color);
 		letter-spacing: -0.02em;
 	}
 	
@@ -110,39 +65,9 @@ if (isPost && route) {
 	}
 
 	.links a:hover {
-		color: #ffffff;
+		color: var(--heading-color);
 	}
 
-	.lang-switcher {
-		/* Stays right side with logo on mobile */
-		margin-left: auto;
-	}
-
-	.lang-switcher ul {
-		display: flex;
-		gap: 0.5rem;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	.lang-switcher a {
-		font-size: 0.85rem;
-		font-weight: 600;
-		color: rgba(218, 234, 255, 0.5);
-		padding: 0.2rem 0.4rem;
-		border-radius: 4px;
-	}
-
-	.lang-switcher a:hover {
-		color: #ffffff;
-		background: rgba(255, 255, 255, 0.1);
-	}
-
-	.lang-switcher a.active {
-		color: var(--bg-color);
-		background: var(--light);
-	}
 
 	/* Desktop: restore three-column flex, no wrapping */
 	@media (min-width: 640px) {
@@ -154,10 +79,6 @@ if (isPost && route) {
 			order: unset;
 			width: auto;
 			justify-content: flex-start;
-		}
-
-		.lang-switcher {
-			margin-left: 0;
 		}
 	}
 </style>

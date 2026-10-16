@@ -62,5 +62,5 @@ Just like standard posts, you can also link localized external articles across l
 ## Next Steps
 
 To explore more of Zahit’s capabilities, check out our companion guides:
-- **[Zahit Theme: How to Write and Organize Content](/en/blog/usage/)**
-- **[Zahit Theme: Advanced Customization & Colors](/en/blog/customization/)**
+- **[Zahit Theme: How to Write and Organize Content](/my-blog/blog/usage/)**
+- **[Zahit Theme: Advanced Customization & Colors](/my-blog/blog/customization/)**

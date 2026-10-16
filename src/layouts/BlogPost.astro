@@ -118,7 +118,7 @@ const tocHeadings = headings.filter((h: MarkdownHeading) => h.depth === 2 || h.d
 
 	.meta {
 		font-size: 0.9rem;
-		color: rgba(218, 234, 255, 0.6);
+		color: rgba(var(--text-rgb), 0.6);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -136,8 +136,8 @@ const tocHeadings = headings.filter((h: MarkdownHeading) => h.depth === 2 || h.d
 	.tag {
 		font-size: 0.85rem;
 		color: var(--light);
-		background-color: rgba(79, 165, 216, 0.08);
-		border: 1px solid rgba(79, 165, 216, 0.2);
+		background-color: rgba(var(--light-rgb), 0.08);
+		border: 1px solid rgba(var(--light-rgb), 0.2);
 		padding: 0.2rem 0.65rem;
 		border-radius: 1rem;
 		transition: all var(--transition-speed) ease;
@@ -147,7 +147,7 @@ const tocHeadings = headings.filter((h: MarkdownHeading) => h.depth === 2 || h.d
 	.tag:hover {
 		background-color: var(--accent);
 		border-color: var(--accent);
-		color: #ffffff;
+		color: var(--on-accent);
 		transform: translateY(-1px);
 	}
 
@@ -191,7 +191,7 @@ const tocHeadings = headings.filter((h: MarkdownHeading) => h.depth === 2 || h.d
 		color: var(--accent);
 		margin-bottom: 0.75rem;
 		padding-bottom: 0.5rem;
-		border-bottom: 1px solid rgba(79, 165, 216, 0.15);
+		border-bottom: 1px solid rgba(var(--light-rgb), 0.15);
 	}
 
 	.toc ul {
@@ -207,7 +207,7 @@ const tocHeadings = headings.filter((h: MarkdownHeading) => h.depth === 2 || h.d
 	.toc-item a {
 		display: block;
 		font-size: 0.85rem;
-		color: rgba(218, 234, 255, 0.55);
+		color: rgba(var(--text-rgb), 0.65);
 		text-decoration: none;
 		padding: 0.3rem 0;
 		line-height: 1.4;
@@ -224,11 +224,11 @@ const tocHeadings = headings.filter((h: MarkdownHeading) => h.depth === 2 || h.d
 	.toc-item.depth-3 a {
 		padding-left: 1.5rem;
 		font-size: 0.8rem;
-		color: rgba(218, 234, 255, 0.4);
+		color: rgba(var(--text-rgb), 0.65);
 	}
 
 	.toc-item.depth-3 a:hover {
-		color: rgba(218, 234, 255, 0.8);
+		color: rgba(var(--text-rgb), 0.8);
 	}
 
 	.toc-item a.active {
@@ -238,7 +238,7 @@ const tocHeadings = headings.filter((h: MarkdownHeading) => h.depth === 2 || h.d
 	}
 
 	.toc-item.depth-3 a.active {
-		color: rgba(218, 234, 255, 0.85);
+		color: rgba(var(--text-rgb), 0.85);
 	}
 </style>
 

@@ -7,7 +7,7 @@
 
 export const SITE_CONFIG = {
   /** Sitenin başlığı / Site title */
-  title: 'Zahit Theme',
+  title: 'Piamsuk FIBO Academy Blog Post',
 
   /** Sitenin açıklaması / Site description */
   description: 'A raw, flat minimalist theme built on the philosophy that simplicity is depth.',
@@ -18,18 +18,16 @@ export const SITE_CONFIG = {
 
 export const AUTHOR = {
   /** Adınız / Your name */
-  name: 'John Doe',
+  name: 'เปี่ยมสุข กงมหา (อิ่ม)',
 
   /** Rolünüz / Your role */
   role: {
-    tr: 'Yazılım Geliştirici',
-    en: 'Software Developer',
+    en: 'Fibo Academy Student',
   },
 
   /** Kısa biyografiniz / Your short bio */
   bio: {
-    tr: 'Modern web teknolojileri ile ilgilenen, açık kaynak kodlu projelere katkıda bulunan bir geliştiriciyim. Burada örnek projelerimi ve yazılarımı paylaşıyorum.',
-    en: 'A developer interested in modern web technologies and contributing to open source projects. Documenting example projects and posts here.',
+    en: 'บันทึกการเดินทาง รวมเรื่องเล่า ประสบการณ์ และไอเดียสนุกๆ ที่เราตั้งใจถ่ายทอดให้ทุกคนได้อ่าน ไม่ว่าจะเป็นความท้าทาย บทเรียน หรือแรงบันดาลใจ อ่านเพลิน ได้ความรู้ ชวนคุยกันได้เสมอนะ!',
   },
 
   /** Profil fotoğrafı yolu / Profile picture path (/src/assets klasöründen / from /src/assets folder) */
@@ -39,37 +37,12 @@ export const AUTHOR = {
 export const SOCIALS = [
   {
     label: 'Mail',
-    href: 'mailto:johndoe@example.com',
+    href: 'mailto:piamsuk.kong@gmail.com',
     icon: 'mdi:email',
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/example',
+    href: 'https://github.com/Piamsuk-Kongmaha',
     icon: 'mdi:github',
-  },
-  {
-    label: 'X',
-    href: 'https://x.com/example',
-    icon: 'mdi:twitter',
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://linkedin.com/in/example',
-    icon: 'mdi:linkedin',
-  },
-  {
-    label: 'Mastodon',
-    href: 'https://mastodon.social/@example',
-    icon: 'mdi:mastodon',
-  },
-  {
-    label: 'Medium',
-    href: 'https://medium.com/@example',
-    icon: 'mdi:medium',
-  },
-  {
-    label: 'RSS',
-    href: '/rss.xml',
-    icon: 'mdi:rss',
   }
 ];

@@ -1,4 +1,5 @@
 ---
+import { SITE_CONFIG } from '../../../config';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { ui, defaultLang } from '../../../i18n/ui';
@@ -39,10 +40,8 @@ const posts = await getCollection('blog', (post: CollectionEntry<'blog'>) => {
 
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const pageTitle = `Zahit | #${tag}`;
-const pageDescription = currentLang === 'tr' 
-  ? `"${tag}" etiketine sahip tüm yazılar` 
-  : `All posts tagged with "${tag}"`;
+const pageTitle = `${SITE_CONFIG.title} | #${tag}`;
+const pageDescription = `All posts tagged with "${tag}"`;
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -92,7 +91,7 @@ const pageDescription = currentLang === 'tr'
 			</ul>
 		) : (
 			<p class="no-posts">
-				{currentLang === 'tr' ? 'Bu etikete sahip yazı bulunamadı.' : 'No posts found with this tag.'}
+				No posts found with this tag.
 			</p>
 		)}
 	</section>
@@ -116,7 +115,7 @@ const pageDescription = currentLang === 'tr'
 	}
 
 	.back-link:hover {
-		color: #ffffff;
+		color: var(--heading-color);
 		transform: translateX(-3px);
 	}
 
@@ -131,7 +130,7 @@ const pageDescription = currentLang === 'tr'
 
 	.tag-subtitle {
 		font-size: 1.05rem;
-		color: rgba(218, 234, 255, 0.6);
+		color: rgba(var(--text-rgb), 0.6);
 		margin: 0;
 	}
 
@@ -150,7 +149,7 @@ const pageDescription = currentLang === 'tr'
 		flex-direction: column;
 		text-decoration: none;
 		padding: 0.85rem 0;
-		border-bottom: 1px solid rgba(218, 234, 255, 0.05);
+		border-bottom: 1px solid rgba(var(--text-rgb), 0.05);
 		transition: all var(--transition-speed) ease;
 	}
 
@@ -171,7 +170,7 @@ const pageDescription = currentLang === 'tr'
 
 	.date {
 		font-size: 0.85rem;
-		color: rgba(218, 234, 255, 0.5);
+		color: rgba(var(--text-rgb), 0.65);
 		margin-top: 0.15rem;
 	}
 
@@ -199,8 +198,8 @@ const pageDescription = currentLang === 'tr'
 		font-size: 0.72rem;
 		font-weight: 500;
 		color: var(--light);
-		background: rgba(79, 165, 216, 0.1);
-		border: 1px solid rgba(79, 165, 216, 0.2);
+		background: rgba(var(--light-rgb), 0.1);
+		border: 1px solid rgba(var(--light-rgb), 0.2);
 		padding: 0.1rem 0.45rem;
 		border-radius: 4px;
 		letter-spacing: 0.02em;
@@ -228,7 +227,7 @@ const pageDescription = currentLang === 'tr'
 	}
 
 	.no-posts {
-		color: rgba(218, 234, 255, 0.5);
+		color: rgba(var(--text-rgb), 0.65);
 		font-style: italic;
 	}
 </style>

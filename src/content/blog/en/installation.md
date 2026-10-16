@@ -70,4 +70,4 @@ Open your favorite web browser and navigate to `http://localhost:4321/` to view 
 
 Now that your Zahit theme is successfully installed and running, you are ready to configure your profile details and write your first bilingual blog post. 
 
-Proceed to our next guide: **[Zahit Theme: How to Write and Organize Content](/en/blog/usage/)** to learn more about the structure of content collections and dynamic i18n routing.
+Proceed to our next guide: **[Zahit Theme: How to Write and Organize Content](/my-blog/blog/usage/)** to learn more about the structure of content collections and dynamic i18n routing.

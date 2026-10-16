@@ -1,30 +1,10 @@
 export const languages = {
-  tr: 'Türkçe',
   en: 'English',
 };
 
-export const defaultLang = 'tr';
+export const defaultLang = 'en';
 
 export const ui = {
-  tr: {
-    'nav.home': 'Ana Sayfa',
-    'nav.about': 'Hakkında',
-    'nav.archive': 'Arşiv',
-    'nav.tags': 'Etiketler',
-    'home.title': 'Sadelik, Eksiklik Değil Derinliktir',
-    'home.subtitle': 'Zahit: Dikkat dağıtan unsurlardan arınmış, yazar ve okuyucu arasındaki mesafeyi kaldıran minimal Astro teması.',
-    'archive.title': 'Tüm Yazılar',
-    'archive.description': 'Geçmişten günümüze tüm düşünceler ve notlar.',
-    'post.publishedOn': 'Yayınlanma Tarihi:',
-    'post.updatedOn': 'Son Güncelleme:',
-    'profile.role': 'Minimalist Geliştirici & Yazar',
-    'profile.bio': 'Dijital karmaşadan uzaklaşıp, sadece fikirlere odaklanmayı seven bir tasarım aşığı.',
-    'nav.get-started': 'Başlarken',
-    'toc.title': 'İçindekiler',
-    'tags.title': 'Etiketler',
-    'tags.description': 'Yazıları ilgi alanlarına veya etiketlere göre keşfedin.',
-    'tags.postsCount': 'yazı',
-  },
   en: {
     'nav.home': 'Home',
     'nav.about': 'About',

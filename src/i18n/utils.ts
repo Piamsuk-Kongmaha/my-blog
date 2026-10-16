@@ -23,7 +23,7 @@ export function getRouteFromUrl(url: URL): string | undefined {
   const pathname = stripBase(new URL(url).pathname);
   const parts = pathname?.split('/');
   
-  if (parts.length > 1 && (parts[1] === 'en' || parts[1] === 'tr')) {
+  if (parts.length > 1 && parts[1] in ui) {
     return parts.slice(2).join('/') || undefined;
   }
   
