@@ -14,6 +14,7 @@
   "dependencies": {
     "@astrojs/mdx": "^8.0.2",
     "@astrojs/rss": "^4.0.18",
+    "@fontsource-variable/anuphan": "^5.3.0",
     "astro": "^7.3.5",
     "astro-icon": "^1.1.5"
   },
