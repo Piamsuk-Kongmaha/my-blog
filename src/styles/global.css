@@ -59,20 +59,20 @@
 }
 
 :root {
-    /* Color Palette — picked from the profile picture */
-    --bg-color: #fdf1c7;      /* Soft butter yellow (her hair, toned down for reading) */
-    --dark: #f7e09a;          /* Deeper gold for panels and cards */
-    --accent: #8c4a0f;        /* Warm brown (her coat): borders, buttons */
-    --light: #1e48b8;         /* Royal blue (her eyes): links and post titles */
-    --text-color: #2b2340;    /* Dark plum-navy (her ribbon): body text */
-    --heading-color: #17122a; /* Near-black for headings and bold text */
-    --on-accent: #ffffff;     /* Text on top of brown buttons */
+       /* Color Palette — gold & navy, picked from the profile picture */
+       --bg-color: #0c1029;      /* Deep navy (her eyes in shadow): page background */
+       --dark: #1a1f45;          /* Lighter navy for panels and cards */
+       --accent: #e3b23c;        /* Gold (her hair): borders, buttons */
+       --light: #ffd86b;         /* Bright gold: links and post titles */
+       --text-color: #f4ecd8;    /* Warm cream: body text */
+       --heading-color: #ffffff; /* White for headings and bold text */
+       --on-accent: #0c1029;     /* Dark text on top of gold buttons */
 
-    /* Same colors as R, G, B numbers — used for see-through tints */
-    --text-rgb: 43, 35, 64;
-    --light-rgb: 30, 72, 184;
-    --accent-rgb: 140, 74, 15;
-    --dark-rgb: 247, 224, 154;
+       /* Same colors as R, G, B numbers — used for see-through tints */
+       --text-rgb: 244, 236, 216;
+       --light-rgb: 255, 216, 107;
+       --accent-rgb: 227, 178, 60;
+       --dark-rgb: 26, 31, 69;
 
     /* Typography */
     --font-family-body: "Source Sans 3", sans-serif;
